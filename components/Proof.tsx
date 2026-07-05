@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { motion, useInView, animate, useReducedMotion } from 'framer-motion'
 import { socials, youtubeChannels, stats } from '@/data/content'
 import { parseStat, toFaDigits } from '@/lib/format'
@@ -52,6 +53,32 @@ function StatCard({ s, i }: { s: (typeof stats)[number]; i: number }) {
         <CountUp raw={s.value} />
       </div>
       <div className="text-[11px] text-gray-600 mt-1 leading-tight">{s.label}</div>
+    </motion.div>
+  )
+}
+
+function Avatar({ src, alt, fallback }: { src?: string; alt: string; fallback: string }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-20px' })
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ scale: 0.4, opacity: 0, rotate: -12 }}
+      animate={inView ? { scale: 1, opacity: 1, rotate: 0 } : {}}
+      transition={{ duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
+      className="relative w-9 h-9 rounded-full flex-shrink-0 overflow-hidden ring-1 ring-white/10"
+    >
+      {src ? (
+        <Image src={src} alt={alt} fill sizes="36px" className="object-cover" />
+      ) : (
+        <div
+          className="w-full h-full flex items-center justify-center text-[10px] font-black text-white"
+          style={{ background: 'linear-gradient(135deg, #e84c1e, #7a1f06)' }}
+        >
+          {fallback}
+        </div>
+      )}
     </motion.div>
   )
 }
@@ -110,12 +137,7 @@ export default function Proof() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 hover:bg-white/[0.02] transition-colors group"
                 >
-                  <div
-                    className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-black text-white"
-                    style={{ background: 'linear-gradient(135deg, #e84c1e, #7a1f06)' }}
-                  >
-                    {s.initials}
-                  </div>
+                  <Avatar src={s.avatar} alt={s.label} fallback={s.initials} />
                   <div className="flex-1 min-w-0">
                     <div className="text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors" dir="ltr">
                       {s.handle}
@@ -145,12 +167,7 @@ export default function Proof() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-4 hover:bg-white/[0.02] transition-colors group"
                 >
-                  <div
-                    className="w-9 h-9 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-black text-white"
-                    style={{ background: 'linear-gradient(135deg, #dc2626, #991b1b)' }}
-                  >
-                    {c.initials}
-                  </div>
+                  <Avatar src={c.avatar} alt={c.name} fallback={c.initials} />
                   <div className="flex-1 min-w-0">
                     <div className="text-[13px] font-semibold text-white/90 group-hover:text-white transition-colors">
                       {c.name}

@@ -67,7 +67,7 @@ export const projects = [
     nameEn: 'Questa',
     status: 'dev' as const,
     statusLabel: 'در توسعه',
-    description: 'اولین بازی مبتنی بر مکان در ایران. بازیکنان به مکان‌های واقعی شهر می‌روند و ماموریت‌ها رو حل می‌کنند. ۷.۷K فالوور، MVP تست شده.',
+    description: 'اولین بازی مبتنی بر مکان در ایران. بازیکنان به مکان‌های واقعی شهر می‌روند و ماموریت‌ها رو حل می‌کنند. ۷.۷K فالوور، MVP تست شده. ادمین و اعلان‌های بازی هم از طریق ربات تلگرام @QuestaGameBot مدیریت می‌شه.',
     link: 'https://questa.vip',
     linkLabel: 'questa.vip',
     emoji: '🎮',
@@ -78,7 +78,7 @@ export const projects = [
     nameEn: 'Car Repair Platform',
     status: 'dev' as const,
     statusLabel: 'در توسعه',
-    description: 'نقشه مشکل‌محور تعمیرگاه‌های مشهد. راهنمای صادقانه برای پیدا کردن مکانیک مناسب.',
+    description: '«بهترین تعمیرگاه نزدیک من» — نقشه مشکل‌محور تعمیرگاه‌های مشهد با امتیاز رضایت بر اساس نوع مشکل. راهنمای صادقانه برای پیدا کردن مکانیک مناسب، بدون واسطه و تبلیغات دروغین.',
     link: null,
     linkLabel: null,
     emoji: '🚗',
@@ -141,6 +141,39 @@ export const projects = [
   },
 ]
 
+export const ideas = [
+  {
+    title: 'چه مویی به من میاد؟',
+    description: 'اپ تشخیص فرم صورت با هوش مصنوعی که مدل مو و ریش مناسب رو پیشنهاد می‌ده — قبل از رفتن آرایشگاه.',
+    emoji: '💇',
+    image: '/images/ideas/hairstyle.png',
+  },
+  {
+    title: 'چه تتویی بزنم؟',
+    description: 'تولید طرح تتو با هوش مصنوعی بر اساس شخصیت، داستان زندگی، یا سبک مورد علاقه‌ی کاربر.',
+    emoji: '🖋️',
+    image: '/images/ideas/tattoo.png',
+  },
+  {
+    title: 'چی واقعی، چی فیک؟',
+    description: 'ابزار سریع تشخیص محتوای ساخته‌شده با هوش مصنوعی از واقعی — عکس، ویدیو، صدا.',
+    emoji: '🔍',
+    image: '/images/ideas/real-or-fake.png',
+  },
+  {
+    title: 'کی کلاه‌برداره، کی نیست؟',
+    description: 'دیتابیس و ابزار استعلام برای شناسایی افراد و کسب‌وکارهای کلاه‌بردار قبل از معامله.',
+    emoji: '🚫',
+    image: '/images/ideas/scam-check.png',
+  },
+  {
+    title: 'چی یاد بگیریم؟',
+    description: 'مسیر یادگیری شخصی‌سازی‌شده با هوش مصنوعی — بر اساس علاقه، زمان، و هدف واقعی کاربر.',
+    emoji: '🧠',
+    image: '/images/ideas/learn-what.png',
+  },
+]
+
 export const skillGroups = [
   {
     title: 'طراحی تجربه',
@@ -165,17 +198,17 @@ export const skillGroups = [
 ]
 
 export const socials = [
-  { handle: '@laneh_matroukeh', label: 'لانه مترووکه', sub: 'اتاق فرار', followers: '۲۴.۶K', url: 'https://instagram.com/laneh_matroukeh', initials: 'LM', platform: 'instagram' },
-  { handle: '@crazy.bazza', label: 'Crazy Bazza', sub: 'خرید و مقایسه', followers: '۳۴.۶K', url: 'https://instagram.com/crazy.bazza', initials: 'CB', platform: 'instagram' },
-  { handle: '@_armin_ap', label: 'آرمین AP', sub: 'خلاق · هوش مصنوعی · هنر', followers: '۱۷.۳K', url: 'https://instagram.com/_armin_ap', initials: 'AA', platform: 'instagram' },
-  { handle: '@questa_iran', label: 'Questa Iran', sub: 'بازی مبتنی بر مکان', followers: '۷.۷K', url: 'https://instagram.com/questa_iran', initials: 'Q', platform: 'instagram' },
-  { handle: '@sara_bonydi', label: 'Sara Bonydi', sub: 'مدرس زبان انگلیسی', followers: '۴.۸K', url: 'https://instagram.com/sara_bonydi', initials: 'SB', platform: 'instagram' },
+  { handle: '@laneh_matroukeh', label: 'لانه مترووکه', sub: 'اتاق فرار', followers: '۲۴.۶K', url: 'https://instagram.com/laneh_matroukeh', initials: 'LM', platform: 'instagram', avatar: '/images/avatars/laneh-matroukeh.png' },
+  { handle: '@crazy.bazza', label: 'Crazy Bazza', sub: 'خرید و مقایسه', followers: '۳۴.۶K', url: 'https://instagram.com/crazy.bazza', initials: 'CB', platform: 'instagram', avatar: '/images/avatars/crazy-bazza.png' },
+  { handle: '@_armin_ap', label: 'آرمین AP', sub: 'خلاق · هوش مصنوعی · هنر', followers: '۱۷.۳K', url: 'https://instagram.com/_armin_ap', initials: 'AA', platform: 'instagram', avatar: '/images/avatars/armin-ap.png' },
+  { handle: '@questa_iran', label: 'Questa Iran', sub: 'بازی مبتنی بر مکان', followers: '۷.۷K', url: 'https://instagram.com/questa_iran', initials: 'Q', platform: 'instagram', avatar: '/images/projects/questa.png' },
+  { handle: '@sara_bonydi', label: 'Sara Bonydi', sub: 'مدرس زبان انگلیسی', followers: '۴.۸K', url: 'https://instagram.com/sara_bonydi', initials: 'SB', platform: 'instagram', avatar: '/images/avatars/sara-bonydi.png' },
 ]
 
 export const youtubeChannels = [
-  { name: 'Armin AP', handle: '@arminap', subs: '۸۹۱', url: 'https://youtube.com/@arminap', initials: 'AP' },
-  { name: 'عجیب غریب', handle: '@ajibqaribe', subs: '۶۰۰', url: 'https://youtube.com/@ajibqaribe', initials: 'AQ' },
-  { name: 'Khial Studio', handle: '@KhialStudio', subs: '۳', url: 'https://youtube.com/@KhialStudio', initials: 'KS' },
-  { name: 'AlipourVideos', handle: '@AlipourVideos', subs: '۱۰', url: 'https://youtube.com/@AlipourVideos', initials: 'AV' },
-  { name: 'Escaperoom Iran', handle: '@EscaperoomIran', subs: '۱۷۴', url: 'https://youtube.com/@EscaperoomIran', initials: 'EI' },
+  { name: 'Armin AP', handle: '@arminap', subs: '۸۹۱', url: 'https://youtube.com/@arminap', initials: 'AP', avatar: '/images/avatars/armin-ap.png' },
+  { name: 'عجیب غریب', handle: '@ajibqaribe', subs: '۶۰۰', url: 'https://youtube.com/@ajibqaribe', initials: 'AQ', avatar: '/images/avatars/ajib-qarib.png' },
+  { name: 'Khial Studio', handle: '@KhialStudio', subs: '۳', url: 'https://youtube.com/@KhialStudio', initials: 'KS', avatar: '/images/avatars/khial-studio.png' },
+  { name: 'AlipourVideos', handle: '@AlipourVideos', subs: '۱۰', url: 'https://youtube.com/@AlipourVideos', initials: 'AV', avatar: '/images/avatars/alipour-videos.png' },
+  { name: 'Escaperoom Iran', handle: '@EscaperoomIran', subs: '۱۷۴', url: 'https://youtube.com/@EscaperoomIran', initials: 'EI', avatar: '/images/avatars/escaperoom-iran.png' },
 ]

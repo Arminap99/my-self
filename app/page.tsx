@@ -3,6 +3,7 @@ import Manifesto from '@/components/Manifesto'
 import Showcase from '@/components/Showcase'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
+import Ideas from '@/components/Ideas'
 import Proof from '@/components/Proof'
 import Contact from '@/components/Contact'
 
@@ -17,6 +18,7 @@ export default function Home() {
             { href: '#about', label: 'درباره' },
             { href: '#showcase', label: 'پروژه‌ها' },
             { href: '#skills', label: 'تجربه' },
+            { href: '#ideas', label: 'ایده‌ها' },
             { href: '#social', label: 'سوشال' },
             { href: '#contact', label: 'تماس' },
           ].map((n) => (
@@ -33,6 +35,7 @@ export default function Home() {
       <Showcase />
       <About />
       <Skills />
+      <Ideas />
       <Proof />
       <Contact />
     </main>
