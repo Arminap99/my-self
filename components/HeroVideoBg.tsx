@@ -3,38 +3,22 @@
 import { useEffect, useRef } from 'react'
 
 export default function HeroVideoBg() {
-  const bgRef = useRef<HTMLVideoElement>(null)
-  const fgRef = useRef<HTMLVideoElement>(null)
+  const ref = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    for (const v of [bgRef.current, fgRef.current]) {
-      if (!v) continue
-      v.muted = true
-      v.play().catch(() => {})
-    }
+    const v = ref.current
+    if (!v) return
+    v.muted = true
+    v.play().catch(() => {})
   }, [])
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-background">
-      {/* Blurred cover fills the edges so there's no flat letterbox bar */}
+    <div
+      className="absolute inset-0 z-0 overflow-hidden bg-background"
+      style={{ background: 'radial-gradient(ellipse at center, #2a1608 0%, #14100c 55%, #0a0908 100%)' }}
+    >
       <video
-        ref={bgRef}
-        src="/videos/hero-bg.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        disablePictureInPicture
-        disableRemotePlayback
-        preload="auto"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover scale-110 blur-3xl opacity-50"
-        style={{ filter: 'saturate(0.85) brightness(0.7) blur(60px)' }}
-      />
-
-      {/* Crisp, full frame — nothing cropped */}
-      <video
-        ref={fgRef}
+        ref={ref}
         src="/videos/hero-bg.mp4"
         autoPlay
         loop
