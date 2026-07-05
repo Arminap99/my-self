@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 9 8;      /* warm near-black */
+    --foreground: 242 239 233; /* warm white */
+    --card: 20 17 15;
+    --ember: 232 76 30;
+    --ember-soft: 255 138 90;
+    --ember-deep: 122 31 6;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --ring: 232 76 30;
+    --radius: 0.625rem;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { direction: rtl; }
+
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
+    line-height: 1.8;
+    overflow-x: hidden;
+    direction: rtl;
+  }
+
+  ::selection {
+    background: rgba(232, 76, 30, 0.35);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(232, 76, 30, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+/* ————— Film grain overlay ————— */
+.noise::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ————— Keyframes ————— */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes emberPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 0.85; transform: scale(1.06); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.fade-up      { animation: fadeUp 0.6s ease both; }
+.fade-in      { animation: fadeIn 0.8s ease both; }
+.ember-pulse  { animation: emberPulse 4s ease-in-out infinite; }
+.marquee-track { animation: marquee 30s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-in, .ember-pulse, .marquee-track { animation: none; }
+}
+
+/* ————— Utilities ————— */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgb(var(--ember));
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(232, 76, 30, 0.4), transparent);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 76, 30, 0.08);
+  border: 1px solid rgba(232, 76, 30, 0.2);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  color: rgb(var(--ember-soft));
+  text-decoration: none;
+}
+
+.card {
+  background: rgb(var(--card));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px 28px;
+  transition: border-color 0.3s;
+}

@@ -1,0 +1,26 @@
+# Dependencies
+/node_modules
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Env
+.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Private / personal files — never push these
+EXPENSES.md
+Armin_Context.md
+Armin AP resume ENGLISH.html
+Armin – Background & Capability Profile.pdf
+resume-armin.pdf
+resume-armin-v2_1.html
+/_*.pdf
+Minimalist hero component/
+Minimalist hero component.zip
