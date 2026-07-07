@@ -8,13 +8,13 @@ import ScrollProgress from '@/components/ScrollProgress'
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://armyn.ir'),
+  metadataBase: new URL('https://www.armyin.ir'),
   title: 'آرمین علیپور',
   description: 'بنیان‌گذار اتاق فرار | طراح تجربه | سازنده محصول دیجیتال',
   openGraph: {
     title: 'آرمین علیپور',
     description: 'بنیان‌گذار اتاق فرار | طراح تجربه | سازنده محصول دیجیتال',
-    url: 'https://armyn.ir',
+    url: 'https://www.armyin.ir',
     locale: 'fa_IR',
     type: 'website',
   },
