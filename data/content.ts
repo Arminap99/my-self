@@ -139,6 +139,17 @@ export const projects = [
     emoji: '📈',
     image: '/images/projects/trading-assistant.png',
   },
+  {
+    name: 'مارکت‌پلیس اکانت',
+    nameEn: 'Account Marketplace Bot',
+    status: 'idea' as const,
+    statusLabel: 'ایده',
+    description: 'بات تلگرامی خرید و فروش اکانت اشتراکی (هوش مصنوعی، سرگرمی، گیم) با کیف‌پول داخلی، شارژ تومانی/کریپتو (USDT) و تحویل خودکار یا دستی محصول.',
+    link: null,
+    linkLabel: null,
+    emoji: '🛒',
+    image: '/images/projects/account-marketplace.png',
+  },
 ]
 
 export const ideas = [

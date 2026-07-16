@@ -20,17 +20,18 @@ const statusStyle = {
   idea: { dot: 'bg-ember-soft', bg: 'bg-ember/[0.08]', border: 'border-ember/25', text: 'text-ember-soft' },
 }
 
-function Card({ p, index }: { p: (typeof projects)[number]; index: number }) {
+function Card({ p, index, variant = 'filmstrip' }: { p: (typeof projects)[number]; index: number; variant?: 'filmstrip' | 'grid' }) {
   const s = statusStyle[p.status]
   const cardRef = useRef<HTMLDivElement>(null)
 
-  // Mouse-follow 3D tilt
+  // Mouse-follow 3D tilt (filmstrip only — skipped for the static/reduced-motion grid)
   const rx = useMotionValue(0)
   const ry = useMotionValue(0)
   const srx = useSpring(rx, { stiffness: 220, damping: 22 })
   const sry = useSpring(ry, { stiffness: 220, damping: 22 })
 
   const onMove = (e: React.MouseEvent) => {
+    if (variant !== 'filmstrip') return
     const el = cardRef.current
     if (!el) return
     const r = el.getBoundingClientRect()
@@ -44,11 +45,13 @@ function Card({ p, index }: { p: (typeof projects)[number]; index: number }) {
       ref={cardRef}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative flex-shrink-0 w-[80vw] md:w-[38vw] lg:w-[29vw] h-[60vh] mx-3 md:mx-4"
+      className={variant === 'filmstrip'
+        ? 'relative flex-shrink-0 w-[80vw] md:w-[38vw] lg:w-[29vw] h-[60vh] mx-3 md:mx-4'
+        : 'relative h-[60vh] md:h-[420px]'}
       style={{ perspective: 1000 }}
     >
       <motion.div
-        style={{ rotateX: srx, rotateY: sry, transformStyle: 'preserve-3d' }}
+        style={variant === 'filmstrip' ? { rotateX: srx, rotateY: sry, transformStyle: 'preserve-3d' } : undefined}
         className="group relative h-full rounded-3xl border border-white/[0.08] overflow-hidden hover:border-ember/30 transition-colors duration-300"
       >
         {/* Illustration background */}
@@ -136,8 +139,32 @@ export default function Showcase() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] })
 
   // RTL film-strip: track overflows to the LEFT, so translate +X to reveal it.
-  const x = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : distance])
+  const x = useTransform(scrollYProgress, [0, 1], [0, distance])
   const barScale = useTransform(scrollYProgress, [0, 1], [0, 1])
+
+  // Reduced-motion: scroll-jacking a parallax filmstrip is exactly the kind of
+  // motion this preference opts out of, but the old fallback just froze `x`
+  // at 0 while still reserving the full scroll-jack height — every project
+  // past the first two became permanently unreachable. Render a plain static
+  // grid instead so nothing gets hidden.
+  if (reduce) {
+    return (
+      <section id="showcase" className="max-w-6xl mx-auto px-6 py-28">
+        <div className="mb-14" dir="rtl">
+          <div className="label mb-4">پروژه‌ها</div>
+          <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+            چیزایی که{' '}
+            <span className="bg-gradient-to-l from-ember to-ember-soft bg-clip-text text-transparent">ساختم</span>
+          </h2>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4" dir="rtl">
+          {projects.map((p, i) => (
+            <Card key={p.name} p={p} index={i} variant="grid" />
+          ))}
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section
