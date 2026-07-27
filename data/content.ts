@@ -11,7 +11,7 @@ export const person = {
 export const stats = [
   { value: '۴+', label: 'اتاق فرار فعال' },
   { value: '۸۰K+', label: 'فالوور در اینستاگرام' },
-  { value: '۱۱+', label: 'کانال و صفحه فعال' },
+  { value: '۱۰+', label: 'کانال و صفحه فعال' },
   { value: 'MVP', label: 'Questa · تست شده' },
 ]
 
@@ -133,7 +133,7 @@ export const projects = [
     nameEn: 'Trading Assistant',
     status: 'dev' as const,
     statusLabel: 'ابزار شخصی',
-    description: 'ابزار دسکتاپ تحلیل بازار کریپتو روی داده‌های زنده Bybit — سیگنال‌های قانون‌محور و کمک هوش مصنوعی برای تصمیم‌گیری.',
+    description: 'سیستم تحلیل معاملاتی شخصی روی بازار کریپتو — بات تلگرامی با تحلیل چارت به کمک Claude Vision و ژورنال معامله، به‌همراه داشبورد وب برای آمار و عملکرد.',
     link: null,
     linkLabel: null,
     emoji: '📈',
@@ -142,13 +142,57 @@ export const projects = [
   {
     name: 'مارکت‌پلیس اکانت',
     nameEn: 'Account Marketplace Bot',
-    status: 'idea' as const,
-    statusLabel: 'ایده',
+    status: 'dev' as const,
+    statusLabel: 'در توسعه',
     description: 'بات تلگرامی خرید و فروش اکانت اشتراکی (هوش مصنوعی، سرگرمی، گیم) با کیف‌پول داخلی، شارژ تومانی/کریپتو (USDT) و تحویل خودکار یا دستی محصول.',
     link: null,
     linkLabel: null,
     emoji: '🛒',
     image: '/images/projects/account-marketplace.png',
+  },
+  {
+    name: 'محتوای سایبان',
+    nameEn: 'Saiban Content Production',
+    status: 'dev' as const,
+    statusLabel: 'پروژه مشتری',
+    description: 'تولید محتوای ویدیویی سینمایی برای اپلیکیشن سایبان (خدمات سالمندی ایران) — سناریوهای تبلیغاتی با کاراکترهای اختصاصی و روایت احساسی، ساخته‌شده با ابزارهای هوش مصنوعی.',
+    link: null,
+    linkLabel: null,
+    emoji: '🎬',
+    image: '/images/projects/saiban-content.png',
+  },
+  {
+    name: 'لانه متروکه: پلتفرم بازی تلگرام',
+    nameEn: 'Laneh Matroukeh — Telegram Game Platform',
+    status: 'dev' as const,
+    statusLabel: 'در توسعه',
+    description: 'پلتفرم بازی رومیزی چندنفره‌ی تلگرامی — نسخه‌ی دیجیتال روایت‌محور «لانه متروکه» به‌همراه بازی‌های سنتی (دوز، ۲۰ سوالی، جاسوس) روی یک زیرساخت مشترک async.',
+    link: null,
+    linkLabel: null,
+    emoji: '📱',
+    image: '/images/projects/laneh-telegram.png',
+  },
+  {
+    name: 'لانه متروکه: تجربه‌ی Unity',
+    nameEn: 'Laneh Matroukeh — Solo Unity Experience',
+    status: 'dev' as const,
+    statusLabel: 'در توسعه',
+    description: 'بازی ترسناک روایت‌محور تک‌نفره در Unity — بازیکن مستندساز که وارد خانه‌ی متروکه‌ی خانواده‌ی بروجردی می‌شه، مدرک جمع می‌کنه و به یکی از ۳ پایان می‌رسه.',
+    link: null,
+    linkLabel: null,
+    emoji: '🕯️',
+    image: '/images/projects/laneh-unity.png',
+  },
+  {
+    name: 'بات دانلودر',
+    nameEn: 'Media Downloader Bot',
+    status: 'dev' as const,
+    statusLabel: 'ابزار شخصی',
+    description: 'بات تلگرامی دانلود ویدیو/عکس از یوتیوب و اینستاگرام با لینک — ابزار شخصی، فاز اول (یوتیوب) در حال تکمیل.',
+    link: null,
+    linkLabel: null,
+    emoji: '⬇️',
+    image: '/images/projects/downloader-bot.png',
   },
 ]
 
@@ -213,7 +257,6 @@ export const socials = [
   { handle: '@crazy.bazza', label: 'Crazy Bazza', sub: 'خرید و مقایسه', followers: '۳۴.۶K', url: 'https://instagram.com/crazy.bazza', initials: 'CB', platform: 'instagram', avatar: '/images/avatars/crazy-bazza.png' },
   { handle: '@_armin_ap', label: 'آرمین AP', sub: 'خلاق · هوش مصنوعی · هنر', followers: '۱۷.۳K', url: 'https://instagram.com/_armin_ap', initials: 'AA', platform: 'instagram', avatar: '/images/avatars/armin-ap.png' },
   { handle: '@questa_iran', label: 'Questa Iran', sub: 'بازی مبتنی بر مکان', followers: '۷.۷K', url: 'https://instagram.com/questa_iran', initials: 'Q', platform: 'instagram', avatar: '/images/projects/questa.png' },
-  { handle: '@sara_bonydi', label: 'Sara Bonydi', sub: 'مدرس زبان انگلیسی', followers: '۴.۸K', url: 'https://instagram.com/sara_bonydi', initials: 'SB', platform: 'instagram', avatar: '/images/avatars/sara-bonydi.png' },
 ]
 
 export const youtubeChannels = [
