@@ -2,15 +2,8 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { person } from '@/data/content'
+import { person, timeline } from '@/data/content'
 import { useMounted } from '@/lib/use-mounted'
-
-const timeline = [
-  { year: '۱۳۹۶', label: 'معماری', icon: '🏛️', desc: 'فهمیدم فضا چطور احساس رو شکل می‌ده' },
-  { year: '۱۳۹۷', label: 'عکاسی و فیلمسازی', icon: '🎬', desc: 'زبان تصویر رو یاد گرفتم' },
-  { year: '۱۴۰۰', label: 'اتاق فرار', icon: '🚪', desc: 'همه چیز رو ترکیب کردم — فضا + روایت + بازیکن' },
-  { year: '۱۴۰۲', label: 'تکنولوژی و محصول', icon: '⚡', desc: 'شروع به ساختن سایت، اپ، و بازی کردم' },
-]
 
 export default function About() {
   const ref = useRef<HTMLElement>(null)
@@ -94,7 +87,8 @@ export default function About() {
         <p className="text-sm text-gray-400 leading-[2]">
           اتاق فرار، Questa، یوتیوب، و محتوای هوش مصنوعی همه وجود دارند — اما باید زیر یک برند چتری مثل{' '}
           <strong className="text-white">Metrox</strong> کنار هم باشند. نه یک فریلنسر با کارهای پراکنده، بلکه یک{' '}
-          <strong className="text-ember-soft">استودیوی تجربه‌محور</strong> با اکوسیستم کامل.
+          <strong className="text-ember-soft">استودیوی تجربه‌محور</strong> با اکوسیستم کامل — جایی که ابزارهای هوش
+          مصنوعی اجازه می‌دهند یک نفر کاری را تحویل دهد که تا دیروز به یک تیم نیاز داشت.
         </p>
       </div>
     </section>

@@ -127,3 +127,34 @@
   padding: 24px 28px;
   transition: border-color 0.3s;
 }
+
+/* ————— Filter pills (Showcase) ————— */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  border-radius: 999px;
+  padding: 7px 15px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgb(156 163 175);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: color 0.25s, background-color 0.25s, border-color 0.25s;
+}
+.pill:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+.pill-active,
+.pill-active:hover {
+  color: #000;
+  background: linear-gradient(to left, rgb(var(--ember)), rgb(var(--ember-soft)));
+  border-color: transparent;
+}
+
+/* Hide the horizontal scrollbar on the sticky filter rail */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
